@@ -13,16 +13,16 @@ class HigherLowerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHigherLowerBinding.inflate(layoutInflater);
+        binding = ActivityHigherLowerBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initViews();
+        initViews()
     }
 
     private fun initViews() {
         binding.btnHigher.setOnClickListener { onHigherClick() }
         binding.btnEquals.setOnClickListener { onEqualClick() }
         binding.btnLower.setOnClickListener { onLowerClick() }
-        updateUI();
+        updateUI()
     }
 
     private fun updateUI() {
@@ -30,14 +30,14 @@ class HigherLowerActivity : AppCompatActivity() {
 
         var imageDrawableId = 1
         when (currentThrow) {
-            1 -> imageDrawableId = R.drawable.dice1;
-            2 -> imageDrawableId = R.drawable.dice2;
-            3 -> imageDrawableId = R.drawable.dice3;
-            4 -> imageDrawableId = R.drawable.dice4;
-            5 -> imageDrawableId = R.drawable.dice5;
-            6 -> imageDrawableId = R.drawable.dice6;
+            1 -> imageDrawableId = R.drawable.dice1
+            2 -> imageDrawableId = R.drawable.dice2
+            3 -> imageDrawableId = R.drawable.dice3
+            4 -> imageDrawableId = R.drawable.dice4
+            5 -> imageDrawableId = R.drawable.dice5
+            6 -> imageDrawableId = R.drawable.dice6
         }
-        binding.imageCenter.setImageDrawable(getDrawable(imageDrawableId));
+        binding.imageCenter.setImageResource(imageDrawableId)
     }
 
     /**
@@ -78,13 +78,13 @@ class HigherLowerActivity : AppCompatActivity() {
     }
 
     private fun onAnswerCorrect() {
-        Toast.makeText(this, R.string.text_correct, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.text_correct, Toast.LENGTH_LONG).show()
     }
 
     /**
      * Displays an incorrect Toast message.
      */
     private fun onAnswerIncorrect() {
-        Toast.makeText(this, R.string.text_incorrect, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.text_incorrect, Toast.LENGTH_LONG).show()
     }
 }
